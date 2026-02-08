@@ -103,8 +103,6 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
   </div>
 </div>
 
-
-
       {/* Main Content */}
      <main className="flex-1 lg:ml-60 pt-14 lg:pt-0">
 
