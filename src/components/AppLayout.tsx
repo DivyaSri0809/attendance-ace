@@ -79,32 +79,24 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
         <NavContent />
       </aside>
 
-      {/* Mobile Header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-30 bg-sidebar border-b border-sidebar-border">
-        <div className="flex items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-sidebar-primary rounded-lg flex items-center justify-center">
-              <Shield className="w-4 h-4 text-sidebar-primary-foreground" />
-            </div>
-            <span className="font-bold text-sidebar-foreground text-sm">
-              Attendance System
-            </span>
-          </div>
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-sidebar-foreground hover:bg-sidebar-accent">
-                <Menu className="w-5 h-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="p-0 bg-sidebar border-sidebar-border w-60">
-              <NavContent />
-            </SheetContent>
-          </Sheet>
-        </div>
-      </div>
+     {/* Mobile Sidebar Button (no header) */}
+<div className="lg:hidden fixed top-3 left-3 z-40">
+  <Sheet open={open} onOpenChange={setOpen}>
+    <SheetTrigger asChild>
+      <Button size="icon" variant="ghost">
+        <Menu className="w-6 h-6" />
+      </Button>
+    </SheetTrigger>
+    <SheetContent side="left" className="p-0 bg-sidebar border-sidebar-border w-60">
+      <NavContent />
+    </SheetContent>
+  </Sheet>
+</div>
+
 
       {/* Main Content */}
-      <main className="flex-1 lg:ml-60 pt-14 lg:pt-0">
+     <main className="flex-1 lg:ml-60">
+
         <div className="p-4 md:p-6 lg:p-8 max-w-7xl">{children}</div>
       </main>
     </div>
